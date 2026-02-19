@@ -1,0 +1,194 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0f1418;
+  --color-foreground: #f0f2f5;
+  --color-primary: #20b2a6;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #1f2830;
+  --color-secondary-foreground: #20b2a6;
+  --color-card: #141a1f;
+  --color-muted: #252e37;
+  --color-muted-foreground: #7a8491;
+  --color-border: #242b32;
+
+  --radius: 0.75rem;
+  --color-highlight: #f5a623;
+  --color-surface: #1a2329;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: "Inter", sans-serif;
+  }
+  .font-serif {
+    font-family: "Playfair Display", serif;
+  }
+}
+
+@layer components {
+  .glass {
+    background-color: color-mix(in srgb, var(--color-surface) 50%, transparent);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+    border:
+      1px solid var(--color-border) 50%,
+      transparent;
+  }
+  .glass-strong {
+    background-color: color-mix(in srgb, var(--color-surface) 80%, transparent);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+    border:
+      1px solid var(--color-border) 80%,
+      transparent;
+  }
+  .glow-text {
+    text-shadow:
+      0 0 18px rgba(32, 178, 166, 0.9),
+      0 0 30px rgba(32, 178, 166, 0.55),
+      0 0 60px rgba(32, 178, 166, 0.35);
+  }
+  .glow-border {
+    /* subtle multi-layered glow around cards/images */
+    box-shadow:
+      0 8px 30px rgba(32, 178, 166, 0.16),
+      0 2px 8px rgba(32, 178, 166, 0.1);
+    transition: box-shadow 350ms ease;
+    position: relative;
+    /* pulsing outer glow using pseudo element for softer falloff */
+    animation: glow-pulse 3s ease-in-out infinite;
+  }
+  .glow-border::after {
+    content: "";
+    position: absolute;
+    inset: -6px;
+    border-radius: inherit;
+    pointer-events: none;
+    filter: blur(20px);
+    background: radial-gradient(
+      circle at center,
+      rgba(32, 178, 166, 0.18),
+      transparent 40%
+    );
+    opacity: 0.9;
+    transition: opacity 350ms ease;
+  }
+  .glow-border {
+    text-shadow:
+      0 0 18px rgba(32, 178, 166, 0.9),
+      0 0 30px rgba(32, 178, 166, 0.55),
+      0 0 60px rgba(32, 178, 166, 0.35);
+  }
+}
+
+@layer utilities {
+  /* pulse and glow animations for elements that need a subtle breathing effect */
+  @keyframes pulse {
+    0% {
+      opacity: 0.85;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.03);
+    }
+    100% {
+      opacity: 0.85;
+      transform: scale(1);
+    }
+  }
+  @keyframes glow-pulse {
+    0% {
+      box-shadow:
+        0 8px 30px rgba(32, 178, 166, 0.12),
+        0 2px 8px rgba(32, 178, 166, 0.06);
+    }
+    50% {
+      box-shadow:
+        0 18px 60px rgba(32, 178, 166, 0.3),
+        0 6px 24px rgba(32, 178, 166, 0.14);
+    }
+    100% {
+      box-shadow:
+        0 8px 30px rgba(32, 178, 166, 0.12),
+        0 2px 8px rgba(32, 178, 166, 0.06);
+    }
+  }
+  .animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  @keyframes fade-In {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+      filter: blur(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+  }
+  @keyframes slow-drift {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+    25% {
+      transform: translate(20px, -30px);
+    }
+    50% {
+      transform: translate(-15px, -20px);
+    }
+    75% {
+      transform: translate(30px, 15px);
+    }
+  }
+  .animate-fade-in {
+    animation: fade-In 0.8s ease-out both;
+  }
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+  .animation-delay-800 {
+    animation-delay: 800ms;
+  }
+  @keyframes animated-border {
+    0% {
+      stroke-dashoffset: 100%;
+    }
+    100% {
+      stroke-dashoffset: -500;
+    }
+  }
+  .group:hover .animated-border-path {
+    animation: animated-border 1.5s linear infinite;
+  }
+  .animated-border:hover {
+    background-color: color-mix(in srgb, #26c4b8 20%, transparent);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 0 20px color-mix(in srgb, #26c4b8 20%, transparent);
+  }
+}
