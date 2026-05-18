@@ -1,6 +1,7 @@
 import { Button } from "@/components/Button";
 import {
   ArrowRight,
+  ChevronDown,
   Download,
   Github,
   Linkedin,
@@ -9,6 +10,29 @@ import {
 } from "lucide-react";
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
 
+const skills = [
+  "React",
+  "Node.js",
+  "Python",
+  "Machine Learning",
+  "Data Analysis",
+  "AWS",
+  "Docker",
+  "MONGODB",
+  "SQL",
+  "Git",
+  "CI/CD",
+  "Agile Methodologies",
+  "Figma",
+  "Adobe XD",
+  "Jira",
+  "Trello",
+  "Linux",
+  "REST APIs",
+  "GraphQL",
+  "TypeScript",
+  "Next.js",
+];
 const DOT_COUNT = 30;
 
 const dots = Array.from({ length: DOT_COUNT }).map(() => {
@@ -117,10 +141,48 @@ export const Hero = () => {
                   alt="Mabrur"
                   className="w-full aspect-[4/5] object-cover rounded-2xl"
                 />
+                {/* Badge */}
+                <div className="absolute -bottom-4 -right-4 glass rounded-xl px-4 py-3 animate-float">
+                  <div className="flex items-center gap-3 ">
+                    <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
+                    <span className="text-sm font-medium">
+                      Available for work
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
+        {/* skills cloud */}
+        <div className="mt-16  animate-fade-in animation-delay-600">
+          <p className="text-sm text-muted-foreground mb-6 text-center">
+            Technologies I work with
+          </p>
+          <div className="flex animate-marquee">
+            {[...skills, ...skills].map((skill, idx) => (
+              <div key={idx} className="flex-shrink-0 px-8 py-4">
+                <span
+                  className="text-xl font-semibold text-muted-foreground/50"
+                  hover:text-muted-foreground
+                  transition-colors
+                >
+                  {skill}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-fade-in animation-delay-800">
+        <a
+          href="#about"
+          className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary"
+        >
+          <span className="text-xs uppercase tracking-wider">Scroll</span>
+
+          <ChevronDown className=" w-6 h-6 animate-bounce " />
+        </a>
       </div>
     </section>
   );
