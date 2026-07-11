@@ -53,7 +53,7 @@ export const Hero = () => {
           alt="Hero background"
           className="w-full h-full object-cover opacity-40"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/80 to-background" />
+        <div className="absolute inset-0 bg-linear-to-b from-background/20 via-background/80 to-background" />
       </div>
       {/* green dots */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -79,32 +79,36 @@ export const Hero = () => {
             <div className="animate-fade-in">
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-primary">
                 <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                Software Engineeer * React Specialist
+                Software Engineeer * AI/ML Engineer
               </span>
             </div>
 
             <div className="space-y-4">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animation-delay-100">
-                Crafting <span className="text-primary glow-text">digital</span>
+                Building{" "}
+                <span className="text-primary glow-text">intelligent</span>
                 <br />
-                experiences with <br />
+                systems with <br />
                 <span className="font-serif italic font-normal text-white">
                   precision.
                 </span>
               </h1>
               <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
-                I am a software Engineering student specializing in Machine
-                Learning, with strong skills in Python, data analysis, and
-                software development. Passionate about building intelligent,
-                scalable solutions to real-world problems.
+                CSE student at United International University, Dhaka.
+                Specializing in Machine Learning, Computer Vision, and
+                full-stack web development. Passionate about solving real-world
+                problems with scalable, intelligent solutions.
               </p>
             </div>
 
             <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
-              <Button size="lg">
+              <Button size="lg" href="#contact">
                 Contact Me <ArrowRight className="w-5 h-5" />
               </Button>
-              <AnimatedBorderButton>
+              <AnimatedBorderButton
+                href="/Mabrur_Frontend_CV1.pdf"
+                download="Mabrur_Frontend_CV1.pdf"
+              >
                 <Download className="w-5 h-5" />
                 Download CV
               </AnimatedBorderButton>
@@ -134,12 +138,12 @@ export const Hero = () => {
           {/* right column: profile image */}
           <div className="relative animate-fade-in animation-delay-300">
             <div className="relative max-w-md mx-auto">
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/30 via-transparent to-primary/10 blur-2xl animate-pulse" />
+              <div className="absolute inset-0 rounded-3xl bg-linear-to-br from-primary/30 via-transparent to-primary/10 blur-2xl animate-pulse" />
               <div className="relative glass rounded-3xl p-2 glow-border">
                 <img
                   src="/profile.jpg"
                   alt="Mabrur"
-                  className="w-full aspect-[4/5] object-cover rounded-2xl"
+                  className="w-full aspect-4/5 object-cover rounded-2xl"
                 />
                 {/* Badge */}
                 <div className="absolute -bottom-4 -right-4 glass rounded-xl px-4 py-3 animate-float">
@@ -161,7 +165,7 @@ export const Hero = () => {
           </p>
           <div className="flex animate-marquee">
             {[...skills, ...skills].map((skill, idx) => (
-              <div key={idx} className="flex-shrink-0 px-8 py-4">
+              <div key={idx} className="shrink-0 px-8 py-4">
                 <span
                   className="text-xl font-semibold text-muted-foreground/50"
                   hover:text-muted-foreground

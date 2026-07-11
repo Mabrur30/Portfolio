@@ -1,4 +1,4 @@
-import { Menu, X } from "lucide-react";
+import { ArrowRight, Menu, X } from "lucide-react";
 import { Button } from "../components/Button";
 import { useEffect, useState } from "react";
 const navlinks = [
@@ -21,7 +21,7 @@ const navlinks = [
 ];
 export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [setIsScrolled] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -31,9 +31,9 @@ export const Navbar = () => {
   }, []);
   return (
     <header
-      className={
-        'fixed top-0 left-0 right-0 transition-all duration-500 ${isScrolled ? "glass-strong" : "bg-transparent py-5"}  z-50'
-      }
+      className={`${
+        isScrolled ? "glass-strong py-4" : "bg-transparent py-5"
+      } fixed top-0 left-0 right-0 transition-all duration-500 z-50`}
     >
       <nav className="container mx-auto px-6 flex items-center justify-between">
         <a
@@ -58,7 +58,14 @@ export const Navbar = () => {
         </div>
         {/* CTA Button */}
         <div className="hidden md:block">
-          <Button size="sm">Contact Me</Button>
+          <Button
+            size="sm"
+            href="#contact"
+            className="group gap-2 border border-white/10 bg-linear-to-r from-primary via-primary to-highlight px-5 py-2.5 tracking-wide text-white shadow-[0_14px_30px_rgba(32,178,166,0.28)] ring-1 ring-white/5 backdrop-blur-md hover:border-primary/35 hover:shadow-[0_18px_40px_rgba(32,178,166,0.34)]"
+          >
+            <span>Contact Me</span>
+            <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
+          </Button>
         </div>
         {/* Mobile menu Button */}
         <button
@@ -76,12 +83,20 @@ export const Navbar = () => {
               <a
                 key={index}
                 href={link.href}
+                onClick={() => setIsMobileMenuOpen(false)}
                 className="text-lg text-muted-foreground rounded-full hover:bg-surface hover:text-foreground  py-2"
               >
                 {link.label}
               </a>
             ))}
-            <Button>Contact Me</Button>
+            <Button
+              href="#contact"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="group inline-flex w-full justify-center gap-2 border border-white/10 bg-linear-to-r from-primary via-primary to-highlight px-5 py-3 tracking-wide text-white shadow-[0_14px_30px_rgba(32,178,166,0.28)] ring-1 ring-white/5 backdrop-blur-md"
+            >
+              <span>Contact Me</span>
+              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
+            </Button>
           </div>
         </div>
       )}
