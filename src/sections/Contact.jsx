@@ -120,20 +120,13 @@ export const Contact = ({ isOpen, onClose }) => {
                   >
                     Send message
                   </button>
-                  <button
-                    type="button"
-                    onClick={onClose}
-                    className="rounded-full border border-border bg-background/40 px-6 py-3 font-medium text-foreground transition-all duration-300 hover:border-primary/40 hover:text-primary"
-                  >
-                    Close modal
-                  </button>
                 </div>
               </form>
             </div>
 
             <div className="glass rounded-3xl p-8 md:p-10 border border-border/40 animate-fade-in animation-delay-100">
               <p className="text-sm uppercase tracking-[0.25em] text-secondary-foreground">
-                Contact me modal
+                Do you have any Question?
               </p>
               <h3 className="mt-3 text-2xl font-semibold text-foreground">
                 Reach out with a project idea, opportunity, or question.
