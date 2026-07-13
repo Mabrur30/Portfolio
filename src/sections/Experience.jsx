@@ -3,21 +3,21 @@ import { useState } from "react";
 const experienceItems = [
   {
     year: "2026",
-    title: "Experience placeholder",
+    title: "Intern - Full Stack Web Development",
     description:
-      "Add your most recent role, internship, freelance work, or major responsibility here.",
+      "Completed an internship at Codveda Technologies, working across full stack web development tasks and supporting real project delivery.",
   },
   {
-    year: "2025",
-    title: "Experience placeholder",
+    year: "2026",
+    title: "Final Year Project Lead Team Member",
     description:
-      "Use this slot for a prior position or a milestone that shows growth.",
+      "Served as a lead team member on my final year project, helped guide the design direction, and contributed to the team earning 1st prize.",
   },
   {
-    year: "2024",
-    title: "Experience placeholder",
+    year: "2026",
+    title: "Project Ownership and Collaboration",
     description:
-      "Keep this item for another role, training program, or relevant project experience.",
+      "Built experience in teamwork, planning, and problem solving through academic and project-based work.",
   },
 ];
 
@@ -53,11 +53,11 @@ export const Experience = () => {
             Experience
           </span>
           <h2 className="mt-4 text-4xl md:text-5xl font-bold leading-tight text-foreground">
-            Placeholder experience
+            Experience highlights
           </h2>
           <p className="mt-4 text-muted-foreground max-w-xl">
-            This section is intentionally left as a scaffold. Swap in real
-            roles, responsibilities, and measurable impact when you are ready.
+            A snapshot of my internship, final year project leadership, and the
+            teamwork that shaped my growth this year.
           </p>
         </div>
 

@@ -94,10 +94,9 @@ export const Hero = () => {
                 </span>
               </h1>
               <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
-                CSE student at United International University, Dhaka.
-                Specializing in Machine Learning, Computer Vision, and
-                full-stack web development. Passionate about solving real-world
-                problems with scalable, intelligent solutions.
+                CSE graduate and full-stack developer passionate about building
+                modern web applications, AI-powered solutions, and user-focused
+                digital experiences using React, Node.js, Python, and Flask.
               </p>
             </div>
 

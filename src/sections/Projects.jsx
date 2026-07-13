@@ -2,28 +2,35 @@ import { useState } from "react";
 
 const projects = [
   {
-    title: "Project Placeholder 01",
+    title: "Civil Hub",
     description:
-      "Add a short description of the project, its problem statement, and the outcome here.",
-    tags: ["React", "UI", "Placeholder"],
+      "CivilHub is a full-stack web platform designed to connect civil engineers, contractors, and clients across Bangladesh.Built with React, TypeScript, Node.js, and MongoDB, it serves as a complete ecosystem for project collaboration, including features for project management, real-time tracking, and professional networking within the civil engineering industry.",
+    tags: ["React", "UI", "Nodejs"],
+    image: "/projects/project1.png",
   },
   {
-    title: "Project Placeholder 02",
+    title: "Surjo",
     description:
-      "Use this card for another showcase project once the final details are ready.",
-    tags: ["Frontend", "API", "Placeholder"],
+      "Surjo is an AI-powered adaptive weekly planner built with Python, Flask, and the OpenAI API. It creates personalized schedules based on users' goals, priorities, and availability while dynamically adapting plans as tasks and routines change. The platform helps users stay organized, improve productivity, and make smarter time-management decisions through intelligent AI-powered recommendations.",
+    tags: ["Python", "Flask", "Open AI API"],
+    image: "/projects/project2.png",
+    demoUrl: "https://surjo-xi.vercel.app",
   },
   {
-    title: "Project Placeholder 03",
+    title: "Probin Nibash",
     description:
-      "This area can hold a future product, client work, or experimental build.",
-    tags: ["Design", "Build", "Placeholder"],
+      "Probin Nibash is a web platform designed to connect elderly individuals with caregivers, nursing services, and support networks in Bangladesh. It serves as a comprehensive solution for elderly care, enabling families to find reliable caregivers, book services, and ensure the well-being of senior citizens through easy access to care-related resources.",
+    tags: ["React", "Nodejs", "MongoDB"],
+    image: "/projects/project3.png",
+    demoUrl: "https://github.com/Mabrur30/Probin-nibash",
   },
   {
-    title: "Project Placeholder 04",
+    title: "EEE Hardware Management System",
     description:
-      "Keep this slot open for a fourth case study, demo, or portfolio highlight.",
-    tags: ["Case Study", "Portfolio", "Placeholder"],
+      "EEE Hardware Management System is a full-stack inventory and booking platform designed for the Electrical and Electronic Engineering (EEE) department. It enables students and faculty to efficiently manage hardware equipment, track real-time availability, make bookings, and view usage history through a clean admin dashboard.",
+    tags: ["React", "Nodejs", "Expressjs"],
+    image: "/projects/project4.png",
+    demoUrl: "https://github.com/Mabrur30/Soft_Project",
   },
 ];
 export const Projects = () => {
@@ -63,7 +70,7 @@ export const Projects = () => {
             Projects
           </span>
           <h2 className="mt-4 text-4xl md:text-5xl font-bold leading-tight text-foreground">
-            Placeholder projects
+            Selected projects
           </h2>
           <p className="mt-4 text-muted-foreground max-w-xl">
             These cards are temporary placeholders. Replace them with finished
@@ -79,20 +86,35 @@ export const Projects = () => {
               className="group glass rounded-3xl overflow-hidden border border-border/40 animate-fade-in transition-all duration-500 hover:-translate-y-3 hover:border-primary/30 hover:shadow-[0_24px_80px_rgba(32,178,166,0.16)]"
               style={{ animationDelay: `${index * 120}ms` }}
             >
-              <div className="relative h-44 overflow-hidden bg-gradient-to-br from-primary/20 via-surface to-highlight/20 flex items-center justify-center">
+              <div className="relative h-44 overflow-hidden bg-linear-to-br from-primary/20 via-surface to-highlight/20">
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.18),transparent_55%)]" />
-                <div className="w-20 h-20 rounded-2xl border border-dashed border-primary/50 bg-background/40 flex items-center justify-center text-xs uppercase tracking-[0.25em] text-muted-foreground">
-                  Soon
-                </div>
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy"
+                />
               </div>
               <div className="p-6 space-y-4 transition-transform duration-500 group-hover:-translate-y-1">
                 <div>
                   <p className="text-xs uppercase tracking-[0.2em] text-secondary-foreground">
-                    Placeholder
+                    Featured project
                   </p>
-                  <h3 className="mt-2 text-xl font-semibold text-foreground">
-                    {project.title}
-                  </h3>
+                  <div className="mt-2 flex flex-wrap items-center gap-3">
+                    <h3 className="text-xl font-semibold text-foreground">
+                      {project.title}
+                    </h3>
+                    {project.demoUrl ? (
+                      <a
+                        href={project.demoUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-medium text-foreground transition-all duration-300 hover:border-primary/50 hover:bg-primary/15"
+                      >
+                        Live demo
+                      </a>
+                    ) : null}
+                  </div>
                 </div>
                 <p className="text-sm text-muted-foreground leading-6">
                   {project.description}

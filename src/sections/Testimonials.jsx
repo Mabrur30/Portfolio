@@ -3,21 +3,21 @@ import { useState } from "react";
 const testimonials = [
   {
     quote:
-      "This is a placeholder testimonial. Replace it with a short client or teammate quote later.",
-    name: "Testimonial placeholder",
-    role: "Role or relationship",
+      "Mabrur's work on CivilHub showed strong technical depth and a genuine ability to translate research into a working system. Their attention to methodology and willingness to iterate stood out",
+    name: "Shihabuddin Ahmad",
+    role: "Course Supervisor",
   },
   {
     quote:
-      "Another placeholder slot for a future review, recommendation, or collaboration note.",
-    name: "Testimonial placeholder",
-    role: "Role or relationship",
+      "Delivered exactly what was promised, on time, with clear communication throughout. Would definitely work with them again for future projects",
+    name: "Sakore Sinha",
+    role: "Fiver Client",
   },
   {
     quote:
-      "Keep this card for a third testimonial once you have real social proof to display.",
-    name: "Testimonial placeholder",
-    role: "Role or relationship",
+      "Reliable, detail-oriented, and great at breaking down complex problems. A strong collaborator on any team project",
+    name: "Samia Karim Nitu",
+    role: "Team Member",
   },
 ];
 
@@ -53,11 +53,10 @@ export const Testimonials = () => {
             Testimonials
           </span>
           <h2 className="mt-4 text-4xl md:text-5xl font-bold leading-tight text-foreground">
-            Placeholder testimonials
+            Featured Testimonials
           </h2>
           <p className="mt-4 text-muted-foreground max-w-xl">
-            These are temporary cards. Replace them with real feedback once you
-            have quotes from clients, teammates, or collaborators.
+            Words from Professors,Clients and team mates
           </p>
         </div>
 
