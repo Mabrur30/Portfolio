@@ -70,7 +70,7 @@ export const Testimonials = () => {
               <div className="mb-6 flex items-center gap-2 text-secondary-foreground">
                 <span className="h-2 w-2 rounded-full bg-primary animate-pulse" />
                 <span className="text-xs uppercase tracking-[0.25em]">
-                  Placeholder
+                  Quote
                 </span>
               </div>
               <p className="text-foreground leading-7 transition-transform duration-500 group-hover:-translate-y-0.5">
